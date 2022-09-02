@@ -9,8 +9,8 @@ const sass = gulpSass(sass2);
 
 const routes = {
   css: {
-    watch: "src/scss/*",
-    src: "src/scss/styles.scss",
+    watch: "src/**/*.scss",
+    src: "src/scss/style.scss",
     dest: "dest/css",
   },
 };
@@ -28,10 +28,7 @@ const styles = () =>
     .pipe(minify())
     .pipe(gulp.dest(routes.css.dest));
 
-const watch = () => {
-  gulp.watch(routes.css.watch, styles);
-};
-
+const watch = () => gulp.watch(routes.css.watch, styles);
 const clean = async () => await deleteSync(["dest/"]);
 
 const prepare = gulp.series([clean]);

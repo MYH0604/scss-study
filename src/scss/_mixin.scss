@@ -1,0 +1,9 @@
+@mixin verticalWriting {
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+
+@mixin border {
+  background-color: white;
+  color: $mainColor;
+}
